@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Hello World</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            body {
+                height: calc(100vh - 5px);
+                width: calc(100vw - 5px);
+            }
+        </style>
+    </head>
+    <script src="js/pixi.js"></script>
+    <script src="js/prepare.js"></script>
+    <script src="js/funcs.js"></script>
+    <body>
+        <script>
+            let app = new Application({
+                // resizeTo: document.body,
+                width: 600,
+                height: 400,
+                backgroundColor: 0xfffff0,
+            })
+
+            document.body.appendChild(app.view)
+            run(app)
+        </script>
+    </body>
+</html>

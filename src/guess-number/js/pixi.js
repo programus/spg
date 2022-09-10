@@ -1,0 +1,1 @@
+../../../lib/pixi/v6.5.3/dev/pixi.js
