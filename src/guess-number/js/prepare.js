@@ -9,8 +9,9 @@ let Application = PIXI.Application,
     resources = PIXI.resources,
     utils = PIXI.utils;
 
-let type = "WebGL"
-if (!utils.isWebGLSupported()) {
-    type = "canvas"
-}
+// let type = "WebGL"
+// if (!utils.isWebGLSupported()) {
+//     type = "canvas"
+// }
+type = "cavas"
 utils.sayHello(type)
