@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    background-color: #ccc;
+}
+
+#game-container {
+    display: flex;
+    background-color: white;
+    width: 300px;
+    height: 100vh;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#input-pad {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+}
+
+#input-pad li {
+    list-style: none;
+}
+
+#input-pad li button {
+    font-family: monospace;
+    font-size: 14px;
+    text-align: center;
+    width: 20px;
+    line-height: 20px;
+    border: 1px black solid;
+    margin: 3px;
+}
+
+#input-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#number-area {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    /* padding: 5px 0; */
+    flex-shrink: 1;
+    border: double black;
+    margin: 5px 21px;
+}
+
+#number-area li {
+    list-style: none;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+#number-area input {
+    width: 48px;
+    height: 32px;
+    text-align: center;
+    font-size: 25px;
+    border-width: 0 0 0 1px;
+}
+
+#number-area li:first-child input {
+    border-width: 0;
+}
+
+#number-area input.selected {
+    filter: invert(100%);
+}
+
+#input-area #submit {
+    height: 32px;
+    width: 40px;
+    font-size: 20px;
+    margin: 0 5px 0 0;
+}
+
+#history-panel {
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow-y: auto;
+}
+
+#history-panel li {
+    list-style: none;
+    display: flex;
+    padding: 5px 1.5em;
+    font-size: 16px;
+}
+
+#history-panel div.number {
+    padding: 0 0.5em;
+}
+
+#history-panel div.result::before {
+    content: '.......';
+    display: inline-block;
+    transform: translateY(-25%);
+    padding: 0 5px;
+}

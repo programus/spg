@@ -1,33 +1,44 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Hello World</title>
-        <style>
-            * {
-                padding: 0;
-                margin: 0;
-            }
-            body {
-                height: calc(100vh - 5px);
-                width: calc(100vw - 5px);
-            }
-        </style>
-    </head>
-    <body>
-        <script src="js/pixi.js"></script>
-        <script src="js/prepare.js"></script>
-        <script src="js/funcs.js"></script>
-        <script>
-            let app = new Application({
-                // resizeTo: document.body,
-                width: 600,
-                height: 400,
-                backgroundColor: 0x000000,
-            })
-
-            document.body.appendChild(app.view)
-            run(app)
-        </script>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Guess Number Game</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+    <div id="app">
+        <div id="game-container">
+            <ul id="input-pad">
+                <li v-for="i in inputs" :key="i">
+                    <button type="button" @click="() => input(i)">{{ i }}</button>
+                </li>
+            </ul>
+            <div id="input-area">
+                <ul id="number-area">
+                    <li v-for="n, i in numbers" :key="i">
+                        <input type="text" readonly="readonly" 
+                            :class="{selected: n.selected}" 
+                            :value="n.value" 
+                            @click="() => selectNumber(i)"
+                        />
+                    </li>
+                </ul>
+                <button id="submit" type="button"
+                    :disabled="!allNumbersSet"
+                    @click="submitGuess"
+                >OK</button>
+            </div>
+            <hr />
+            <ul id="history-panel">
+                <li v-for="h, i in history" :key="i">
+                    <div v-for="n in h.number" :key="n" class="number">{{ n }}</div>
+                    <div class="result">{{ h.result.a }}A{{ h.result.b }}B</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
 </html>
