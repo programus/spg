@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  appearance: none;
+}
+
+body {
+  background-color: #ccc;
+  overflow: none;
+}
+
+#game-container {
+  position: absolute;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 500px;
+}
+
+#input-part {
+  position: fixed;
+  background-color: white;
+  padding: 20px;
+  width: 460px;
+  height: 170px;
+  box-shadow: #ccc 0px 2px 5px 1px;
+}
+
+#input-pad {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#input-pad td {
+  font-family: monospace;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+  border: black solid 1px;
+  cursor: pointer;
+}
+
+#input-area {
+  padding-top: 20px;
+}
+
+#number-area {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  border: solid black 3px;
+  padding: 5px 21px;
+}
+
+#number-area td {
+  width: 25%;
+  height: 46px;
+  text-align: center;
+  font-size: 25px;
+  border: solid black 1px;
+}
+
+#number-area td.selected {
+  background-color: black;
+  border-color: white;
+  color: white;
+}
+
+#input-area #submit {
+  height: 40px;
+  width: 100%;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+#history-panel {
+  position: fixed;
+  top: 220px;
+  bottom: 0;
+  padding-bottom: 180px;
+  width: 500px;
+  overflow-y: auto;
+  list-style-position: inside;
+}
+
+#history-panel li {
+  list-style: none;
+  margin: 5px 1.5em;
+  font-size: 20px;
+}
+
+#history-panel li div {
+  display: inline-block;
+}
+
+#history-panel div.index {
+  width: 3em;
+  text-align: right;
+  padding: 0 0.5em;
+}
+
+#history-panel div.index::after {
+  content: ':';
+}
+
+#history-panel div.number {
+  padding: 0;
+}
+
+#history-panel div.result::before {
+  content: ".......";
+  display: inline-block;
+  -webkit-transform: translateY(-25%);
+  -ms-transform: translateY(-25%);
+  transform: translateY(-25%);
+  padding: 0 5px;
+}
+
+#result {
+  text-align: center;
+  font-size: 32px;
+  width: 470px;
+  background-color: #eee;
+  position: fixed;
+  bottom: 0;
+  box-shadow: #ccc 0 -1px 5px 1px;
+  padding: 15px;
+  display: none;
+}
+
+#result.goal {
+  display: block;
+}
+
+#stars {
+  font-size: 48px;
+  padding-bottom: 5px;
+}
+
+#win {
+  padding-bottom: 20px;
+}
+
+#replay {
+  position: absolute;
+  font-size: 40px;
+  right: 10px;
+  bottom: 30px;
+  padding: 5px 15px;
+}

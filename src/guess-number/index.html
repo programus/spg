@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Guess Number Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="input-part">
+            <table id="input-pad">
+                <tr id="input-row">
+                </tr>
+            </table>
+            <div id="input-area">
+                <table id="number-area">
+                    <tr id="number-row">
+                    </tr>
+                </table>
+                <button id="submit" type="button">↓ 猜 (Guess) ↓</button>
+            </div>
+        </div>
+        <ol id="history-panel"></ol>
+        <div id="result">
+            <div id="stars">★★☆</div>
+            <div id="win">
+                猜对了！
+                <button id="replay" onclick="replay()">⤾</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
