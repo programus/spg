@@ -5,38 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Guess Number Game</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/vue.global.js"></script>
 </head>
 <body>
-    <div id="app">
-        <div id="game-container">
-            <ul id="input-pad">
-                <li v-for="i in inputs" :key="i">
-                    <button type="button" @click="() => input(i)">{{ i }}</button>
-                </li>
-            </ul>
+    <div id="game-container">
+        <div id="input-part">
+            <table id="input-pad">
+                <tr id="input-row">
+                </tr>
+            </table>
             <div id="input-area">
-                <ul id="number-area">
-                    <li v-for="n, i in numbers" :key="i">
-                        <input type="text" readonly="readonly" 
-                            :class="{selected: n.selected}" 
-                            :value="n.value" 
-                            @click="() => selectNumber(i)"
-                        />
-                    </li>
-                </ul>
-                <button id="submit" type="button"
-                    :disabled="!allNumbersSet"
-                    @click="submitGuess"
-                >OK</button>
+                <table id="number-area">
+                    <tr id="number-row">
+                    </tr>
+                </table>
+                <button id="submit" type="button">↓ 猜 (Guess) ↓</button>
             </div>
-            <hr />
-            <ul id="history-panel">
-                <li v-for="h, i in history" :key="i">
-                    <div v-for="n in h.number" :key="n" class="number">{{ n }}</div>
-                    <div class="result">{{ h.result.a }}A{{ h.result.b }}B</div>
-                </li>
-            </ul>
+        </div>
+        <ol id="history-panel"></ol>
+        <div id="result">
+            <div id="stars">★★☆</div>
+            <div id="win">
+                猜对了！
+                <button id="replay" onclick="replay()">⤾</button>
+            </div>
         </div>
     </div>
     <script src="js/main.js"></script>
